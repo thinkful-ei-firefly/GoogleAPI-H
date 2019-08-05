@@ -2,6 +2,8 @@ import React from "react";
 import "./SearchBar.css";
 
 function SearchBar() {
+  const url = "";
+
   return (
     <section className="searchBar">
       <p>

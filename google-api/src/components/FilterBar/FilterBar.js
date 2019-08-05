@@ -1,12 +1,13 @@
 import React from "react";
 import FilterByPrint from "./FilterByPrint";
-import filterByBook from "./FilterByBook";
+import FilterByBook from "./FilterByBook";
+import "./filterBar.css";
 
 function FilterBar() {
   return (
     <div className="filterBar">
       <FilterByPrint />
-      <filterByBook />
+      <FilterByBook />
     </div>
   );
 }

@@ -6,9 +6,17 @@ function FilterByPrint() {
     <section className="filterBar">
       <p>
         Print Type:
-        <form className="search">
-          <input type="text" className="input" placeholder="henry" required />
-          <button type="submit" className="searchButton" />
+        <form className="filter">
+          <select
+            class="filter-control"
+            id="js-filter-control"
+            name="filter"
+            aria-label="Filter book by print type"
+          >
+            <option value="0">All</option>
+            <option value="1">Books</option>
+            <option value="2">Magazines</option>
+          </select>
         </form>
       </p>
     </section>
