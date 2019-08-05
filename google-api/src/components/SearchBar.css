@@ -1,0 +1,20 @@
+.searchBar {
+  background-color: rgb(167, 164, 164);
+  padding: 1px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.input {
+  background-color: lightgoldenrodyellow;
+  margin-left: 5px;
+}
+
+.searchButton {
+  border: blue solid 2px;
+  border-radius: 5px;
+}
