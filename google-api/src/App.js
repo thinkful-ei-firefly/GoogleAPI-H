@@ -3,30 +3,34 @@ import "./App.css";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import FilterBar from "./components/FilterBar/FilterBar";
-import List from "./components/List";
+import BookList from "./components/BookList";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      books: [],
-      showBookList: false
-    };
-  }
+  state = {
+    books: [],
+    apiKey: "AIzaSyCF2jhPtdXS0bO0z6DAwGn0ApfA2I4bw1Y"
+  };
+
+  handleSearchSubmit = ({ text, bookType, printType }) => {
+    fetch(
+      `https://googleapis.com/books/v1/volumes?q=${text}&filter=${bookType}&printType=${printType}&key=${
+        this.state.apiKey
+      }`
+    )
+      .then(res => res.json())
+      .then(books => {
+        console.log(books);
+        this.setState({ books: books.item });
+      });
+  };
 
   render() {
-    const page = this.state.showBookList ? (
-      <List />
-    ) : (
-      <App books={this.state.books} />
-    );
-
     return (
       <div className="App">
         <Header />
-        <SearchBar />
+        <SearchBar handleSearchSubmit={this.handleSearchSubmit} />
         <FilterBar />
-        {page}
+        <BookList books={this.state.books} />
       </div>
     );
   }

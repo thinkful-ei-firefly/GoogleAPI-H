@@ -4,11 +4,11 @@ import "./filterBar.css";
 function FilterByBook() {
   return (
     <section className="filterBar">
-      <p>
+      <div>
         Book Type:
         <form className="search">
           <select
-            class="filter-control"
+            className="filter-control"
             id="js-filter-control"
             name="filter"
             aria-label="Filter book by print type"
@@ -21,7 +21,7 @@ function FilterByBook() {
             <option value="2">partial</option>
           </select>
         </form>
-      </p>
+      </div>
     </section>
   );
 }

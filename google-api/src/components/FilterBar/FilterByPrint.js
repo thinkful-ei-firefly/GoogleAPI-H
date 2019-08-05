@@ -4,11 +4,11 @@ import "./filterBar.css";
 function FilterByPrint() {
   return (
     <section className="filterBar">
-      <p>
+      <div>
         Print Type:
         <form className="filter">
           <select
-            class="filter-control"
+            className="filter-control"
             id="js-filter-control"
             name="filter"
             aria-label="Filter book by print type"
@@ -18,7 +18,7 @@ function FilterByPrint() {
             <option value="2">Magazines</option>
           </select>
         </form>
-      </p>
+      </div>
     </section>
   );
 }
